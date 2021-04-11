@@ -1,0 +1,10 @@
+header {
+    background-size: cover;
+    background: url("images/dog2.jpg") top;
+    min-height: 1500px;
+}
+@media screen and (max-width: 670px) {
+header {
+    min-height: 800px;
+}
+}

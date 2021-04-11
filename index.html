@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Materialize Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/ee8f4afaa4.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+
+<header>
+    <nav class="nav-wrapper transparent">
+        <div class="container">
+            <a href="" class="brand-logo pink-text">Animal Army</a>
+            <a href="" class="sidenav-trigger" data-target="mobile-menu">
+                <i class="material-icons pink-text">menu</i>
+            </a>
+            <ul class="hide-on-med-and-down right">
+                <li><a class="pink-text" href="#">Photo's</a></li>
+                <li><a class="pink-text" href="#">Services</a></li>
+                <li><a class="pink-text" href="#">Contact</a></li>
+            </ul>
+            <ul class="sidenav grey lighten-2" id="mobile-menu">
+                <li><a href="#">Photo's</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+</script>
+<script>
+    $(document).ready(() => {
+        $('.sidenav').sidenav()
+    })
+</script>
+
+</body>
+</html>
