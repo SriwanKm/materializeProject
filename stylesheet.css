@@ -1,10 +1,23 @@
 header {
     background-size: cover;
-    background: url("images/dog2.jpg") top;
-    min-height: 1500px;
-}
-@media screen and (max-width: 670px) {
-header {
+    background: url("images/pug.jpg") top;
     min-height: 800px;
 }
+
+img {
+    margin-top: 3rem;
+}
+
+.tabs .indicator {
+    background-color: #ee6e73;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background: whitesmoke;
+}
+
+@media screen and (max-width: 670px) {
+    header {
+        min-height: 550px;
+    }
 }
