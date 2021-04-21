@@ -19,20 +19,29 @@
                 <i class="material-icons">menu</i>
             </a>
             <ul class="hide-on-med-and-down right">
-                <li><a href="#">Photo's</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="tooltipped btn-floating btn-small transparent" data-tooltip="Instagram">
+                    <i class="fab fa-instagram"></i></a>
+                </li>
+                <li><a href="#" class="tooltipped btn-floating btn-small transparent" data-tooltip="Facebook">
+                    <i class="fab fa-facebook"></i></a>
+                </li>
+                <li><a href="#" class="tooltipped btn-floating btn-small transparent" data-tooltip="Twitter">
+                    <i class="fab fa-twitter"></i></a>
+                </li>
             </ul>
             <ul class="sidenav grey lighten-2" id="mobile-menu">
-                <li><a href="#">Photo's</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 </header>
 
-<section class="container section" id="photo's">
+<section class="container section scrollspy" id="products">
     <div class="row">
         <div class="col s12 l5">
             <img src="images/bird.jpg" alt="bird" class="responsive-img materialboxed">
@@ -94,10 +103,10 @@
     </div>
 </div>
 
-<section class="container section" id="services">
+<section class="container section scrollspy" id="services">
     <div class="row">
         <div class="col s12 l5">
-            <h2 class="deep-orange-text lighten-2">What I do...</h2>
+            <h2 class="deep-orange-text lighten-2">What we do...</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequuntur distinctio eaque
                 laudantium molestiae mollitia odit recusandae reprehenderit repudiandae.</p>
         </div>
@@ -147,6 +156,105 @@
         quae quasi quis repudiandae saepe sequi veniam vero. Error esse est pariatur quidem suscipit?</p>
 </div>
 
+<section class="container section scrollspy" id="contact">
+    <div class="row">
+        <div class="col s12 l5">
+            <h2 class="indigo-text">Get In Touch</h2>
+            <p>Ab corporis cum, deleniti iure
+                omnis perspiciatis provident soluta tempore. Aliquid sit, voluptas.
+            </p>
+            <p>Ab corporis cum, deleniti iure
+                omnis perspiciatis provident soluta tempore. Aliquid sit, voluptas.
+            </p>
+            <p>Ab corporis cum, deleniti iure
+                omnis perspiciatis provident soluta tempore. Aliquid sit, voluptas.
+            </p>
+            <p>Ab corporis cum, deleniti iure
+                omnis perspiciatis provident soluta tempore. Aliquid sit, voluptas.
+            </p>
+        </div>
+
+        <div class="col s12 l5 offset-l2">
+            <form action="">
+                <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">message</i>
+                    <label for="message">Your Message</label>
+                    <textarea name="message" id="message" class="materialize-textarea"></textarea>
+                </div>
+                <div class="input-field">
+                    <label for="date">Choose the date you want to discuss...</label>
+                    <input type="text" id="date" class="datepicker">
+                </div>
+                <div class="input-field">
+                    <p>Type of your animal...</p>
+                    <p>
+                        <label>
+                            <input type="checkbox"/>
+                            <span>Dog</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox"/>
+                            <span>Cat</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox"/>
+                            <span>Bird</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox"/>
+                            <span>Rabbit</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox"/>
+                            <span>Chicken</span>
+                        </label>
+                    </p>
+                </div>
+                <div class="input-field center">
+                    <button class="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<footer class="page-footer grey darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 l6">
+                <h5>About Us</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae deserunt dolor, eligendi est et
+                    molestiae molestias non officiis, optio quasi quo repudiandae tempora, voluptatem voluptatum?</p>
+            </div>
+
+            <div class="col s12 l4 offset-l2">
+                <h5>Connect</h5>
+                <ul>
+                    <li><a href="#" class="grey-text text-lighten-3">Facebook</a></li>
+                    <li><a href="#" class="grey-text text-lighten-3">Twitter</a></li>
+                    <li><a href="#" class="grey-text text-lighten-3">LinkedIn</a></li>
+                    <li><a href="#" class="grey-text text-lighten-3">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright grey darken-4">
+        <div class="container center-align">&copy; 2018 Animal Army</div>
+    </div>
+</footer>
+
 <script
         src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -158,6 +266,9 @@
         $('.materialboxed').materialbox()
         $('.parallax').parallax()
         $('.tabs').tabs()
+        $('.datepicker').datepicker()
+        $('.tooltipped').tooltip()
+        $('.scrollspy').scrollSpy()
     })
 </script>
 
