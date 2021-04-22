@@ -29,8 +29,20 @@ img {
 .hh1 .p1 {
     font-family: 'Alegreya SC', serif;
     margin: 0 10rem;
-    font-size: 2.5em;
+    font-size: 2.8em;
     font-weight: bold;
+    color: white;
+    text-shadow: .07em .07em 0 hsla(230,40%,50%,1);
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-7px); }
+}
+.cloud {
+    animation: bounce 0.7s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 .hh1 .p2 {
@@ -47,6 +59,11 @@ img {
     right: 1em;
     top: 2em;
     color: #ee6e73;
+}
+
+span:hover {
+    color: #ffffff;
+    cursor: pointer;
 }
 
 .hh2 p {

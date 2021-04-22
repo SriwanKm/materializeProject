@@ -1,4 +1,4 @@
-$.getJSON("https://api.openweathermap.org/data/2.5/weather?q=Osaka&units=imperial&appid=7976a294696117738d3f4102e7df0152",
+$.getJSON("https://api.openweathermap.org/data/2.5/weather?q=Oregon&units=imperial&appid=7976a294696117738d3f4102e7df0152",
 
     function (data) {
         console.log(data)
@@ -39,7 +39,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=Osaka&units=imperia
         $(".temp").append(temp + " °F");
         $(".humidity").append(humidity);
 
-        if (temp > 55 && humidity >= 10 && humidity <= 50) {
+        if (temp >= 55 && humidity >= 10 && humidity <= 50) {
             $("#msg").append("It's a nice day for a nice walk Woof!");
         }
     })
