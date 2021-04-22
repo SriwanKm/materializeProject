@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
     <script src="https://kit.fontawesome.com/ee8f4afaa4.js" crossorigin="anonymous" defer></script>
+    <script src="weather.js" defer></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
 
@@ -39,6 +41,20 @@
             </ul>
         </div>
     </nav>
+    <div class="container">
+        <div class="row h">
+            <div class="hh1 center-align">
+                <p>World Class Pet Products and Services</p>
+                <p>Pet Care | Pet Sitting | Pet Walking</p>
+            </div>
+            <div class="hh2 col s2 l3 offset-l7 offset-s9 center-align">
+                <img class="icon responsive-img" src="">
+                <p class="weather"></p>
+                <p class="temp"></p>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </div>
 </header>
 
 <section class="container section scrollspy" id="products">
@@ -183,11 +199,11 @@
                 </div>
                 <div class="input-field">
                     <i class="material-icons prefix">message</i>
-                    <label for="message">Your Message</label>
+                    <label for="message">Service required</label>
                     <textarea name="message" id="message" class="materialize-textarea"></textarea>
                 </div>
                 <div class="input-field">
-                    <label for="date">Choose the date you want to discuss...</label>
+                    <label for="date">Schedule for services...</label>
                     <input type="text" id="date" class="datepicker">
                 </div>
                 <div class="input-field">
