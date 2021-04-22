@@ -1,10 +1,16 @@
-
+body {
+    font-family: 'Niramit', sans-serif;
+}
 header {
     margin: 0;
     padding: 0;
     background-size: cover;
     background: url("images/pug.jpg") top;
     min-height: 800px;
+}
+
+.brand-logo {
+    font-family: 'Original Surfer', cursive;
 }
 
 img {
@@ -16,17 +22,35 @@ display: inline;
 }
 
 .hh1 {
-    margin-top: 3rem;
+    margin-top: 2rem;
+}
+
+.hh1 .p1 {
+    font-family: 'Alegreya SC', serif;
+    margin: 0 10rem;
+    font-size: 2.5em;
+    font-weight: bold;
 }
 
 .hh2 {
+    width: fit-content;
     position: absolute;
     right: 1em;
     top: 2em;
 }
 
+h2 {
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+}
+
 .tabs .indicator {
     background-color: #ee6e73;
+}
+
+.tabs li a, .tt {
+    font-weight: bold;
+    font-family: 'Comfortaa', cursive;
 }
 
 .tabs .tab a:focus, .tabs .tab a:focus.active {
@@ -38,5 +62,8 @@ display: inline;
 @media screen and (max-width: 670px) {
     header {
         min-height: 550px;
+    }
+    .hh1 .p1 {
+        font-size: 2em;
     }
 }
