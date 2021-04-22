@@ -1,6 +1,7 @@
 body {
     font-family: 'Niramit', sans-serif;
 }
+
 header {
     margin: 0;
     padding: 0;
@@ -18,7 +19,7 @@ img {
 }
 
 .h {
-display: inline;
+    display: inline;
 }
 
 .hh1 {
@@ -32,11 +33,33 @@ display: inline;
     font-weight: bold;
 }
 
+.hh1 .p2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
 .hh2 {
+    font-family: 'Sniglet', cursive;
+    /*font-weight: bold;*/
     width: fit-content;
     position: absolute;
     right: 1em;
     top: 2em;
+    color: #ee6e73;
+}
+
+.hh2 p {
+    line-height: 1.2em;
+   margin-top: 0;
+    padding-top: 0;
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+.hh2 .temp {
+    font-size: 2em;
+    font-weight: bold;
 }
 
 h2 {
@@ -58,11 +81,11 @@ h2 {
 }
 
 
-
 @media screen and (max-width: 670px) {
     header {
         min-height: 550px;
     }
+
     .hh1 .p1 {
         font-size: 2em;
     }
