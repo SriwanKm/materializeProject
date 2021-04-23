@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal Army | Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@700&family=Comfortaa&family=Niramit&family=Original+Surfer&family=RocknRoll+One&family=Sniglet:wght@400;800&display=swap"
+          rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
+
+</head>
+<body>
+<button type="button" id="callData">Display JSON</button>
+<div id="output"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    $(function () {
+        $('#callData').click(function () {
+            const url = 'https://spreadsheets.google.com/feeds/list/1QgxRgtc3-84kC4RE4MV8a0sM0D11WNTwnfrwS68jvfI/od6/public/values?alt=json';
+            $.getJSON(url, function (data) {
+                console.log(data.feed.entry)
+                let html = '<div class="container"><div class="row">'
+                let closeTag = '</div></div>'
+                $.each(data.feed.entry, function
+                    (key, val) {
+                    console.log(val.gsx$id.$t)
+                    console.log(val.gsx$name.$t)
+                    console.log(val.gsx$description.$t)
+
+                    html += `
+    <div class="col s12 m4 l4">
+      <div class="card">
+        <div class="card-image">
+          <img src="">
+        </div>
+
+        <div class="card-content">
+            <span class="card-title">${val.gsx$name.$t}</span>
+            <div class="container center">
+                <botton class="btn yellow darken-3">Add to card</botton>
+            </div>
+        </div>
+      </div>
+    </div>
+
+                `
+                })
+                $('#output').html(html + closeTag);
+            })
+        })
+    });
+</script>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+</script>
+</body>
+</html>

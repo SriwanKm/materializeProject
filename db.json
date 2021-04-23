@@ -6,11 +6,30 @@
       "author": "typicode"
     }
   ],
-  "comments": [
+  "products_img": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "url": "images/bird_house.jpeg"
+    },
+    {
+      "id": 2,
+      "url": "images/bunny_bd.jpeg"
+    },
+    {
+      "id": 3,
+      "url": "images/cat_bowl.jpeg"
+    },
+    {
+      "id": 4,
+      "url": "images/dog_shirt.jpeg"
+    },
+    {
+      "id": 5,
+      "url": "images/dog_shower.jpeg"
+    },
+    {
+      "id": 6,
+      "url": "images/chick_bed.jpeg"
     }
   ],
   "profile": {

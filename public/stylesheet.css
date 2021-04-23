@@ -23,7 +23,7 @@ img {
 }
 
 .hh1 {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .hh1 .p1 {
@@ -31,14 +31,19 @@ img {
     margin: 0 10rem;
     font-size: 2.8em;
     font-weight: bold;
-    color: white;
-    text-shadow: .07em .07em 0 hsla(230,40%,50%,1);
+    color: #4d5eb3;
+    text-shadow: .07em .07em 0 hsl(0, 0%, 100%);
 }
 
 @keyframes bounce {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-7px); }
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
 }
+
 .cloud {
     animation: bounce 0.7s;
     animation-direction: alternate;
@@ -57,18 +62,18 @@ img {
     width: fit-content;
     position: absolute;
     right: 1em;
-    top: 2em;
+    top: 3em;
     color: #ee6e73;
 }
 
-span:hover {
+.p2 span:hover {
     color: #ffffff;
     cursor: pointer;
 }
 
 .hh2 p {
     line-height: 1.2em;
-   margin-top: 0;
+    margin-top: 0;
     padding-top: 0;
     font-size: 1em;
     margin-bottom: 0;
@@ -85,16 +90,29 @@ h2 {
 }
 
 .tabs .indicator {
-    background-color: #ee6e73;
+    background-color: #ffbb3e;
 }
 
 .tabs li a, .tt {
-    font-weight: bold;
-    font-family: 'Comfortaa', cursive;
+    /*font-weight: bold;*/
+    font-family: 'Sniglet', cursive;
+    font-size: 2.5em;
 }
 
 .tabs .tab a:focus, .tabs .tab a:focus.active {
     background: whitesmoke;
+}
+
+#services {
+    margin: 2em auto;
+}
+
+.chic {
+    margin-top: 4em;
+}
+
+.pdjs {
+    width: 200px;
 }
 
 
@@ -107,3 +125,4 @@ h2 {
         font-size: 2em;
     }
 }
+
