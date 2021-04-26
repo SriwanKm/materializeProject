@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Animal Army | Products</title>
+    <title>Animal Army</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="stylesheet.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -10,49 +10,119 @@
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@700&family=Comfortaa&family=Niramit&family=Original+Surfer&family=RocknRoll+One&family=Sniglet:wght@400;800&display=swap"
           rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
-
+    <script src="https://kit.fontawesome.com/ee8f4afaa4.js" crossorigin="anonymous" defer></script>
+    <script src="weather.js" defer></script>
+    <script src="main.js" defer></script>
 </head>
-<body>
-<button type="button" id="callData">Display JSON</button>
+<body id="callData" onload="loadPage()">
+<header class="head-pd">
+    <nav class="nav-wrapper">
+        <div class="container">
+            <a href="index.html" class="brand-logo">Animal Army</a>
+            <a href="" class="sidenav-trigger" data-target="mobile-menu">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="hide-on-med-and-down right">
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="#" class="tooltipped btn-floating btn-small transparent" data-tooltip="Instagram">
+                    <i class="fab fa-instagram"></i></a>
+                </li>
+                <li><a href="#" class="tooltipped btn-floating btn-small transparent" data-tooltip="Facebook">
+                    <i class="fab fa-facebook"></i></a>
+                </li>
+                <li><a href="#" class="tooltipped btn-floating btn-small transparent" data-tooltip="Twitter">
+                    <i class="fab fa-twitter"></i></a>
+                </li>
+            </ul>
+            <ul class="sidenav grey lighten-2" id="mobile-menu">
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row h">
+            <div class="hh1 pd center-align indigo-text text-darken-2">
+                <p class="p1" data-shadow='sign up today get 25% off plus free shipping'>sign up today get 25% off plus
+                    free shipping</p>
+                <a href="#msg"><p class="p2"><span>Clothing</span> | <span>Toys</span> | <span>Accessories</span></p></a>
+            </div>
+            <div class="hh2 col s2 l3 offset-l7 offset-s9 center-align">
+                <img class="cloud icon responsive-img" src="">
+                <p class="temp"></p>
+<!--                <p class="humidity"></p>-->
+                <p id="msg" class="scrollspy"></p>
+            </div>
+        </div>
+    </div>
+</header>
 <div id="output"></div>
+<footer class="page-footer grey darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 l6">
+                <h5>About Us</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae deserunt dolor, eligendi est et
+                    molestiae molestias non officiis, optio quasi quo repudiandae tempora, voluptatem voluptatum?</p>
+            </div>
+
+            <div class="col s12 l4 offset-l2">
+                <h5>Connect</h5>
+                <ul>
+                    <li><a href="#" class="grey-text text-lighten-3">Facebook</a></li>
+                    <li><a href="#" class="grey-text text-lighten-3">Twitter</a></li>
+                    <li><a href="#" class="grey-text text-lighten-3">LinkedIn</a></li>
+                    <li><a href="#" class="grey-text text-lighten-3">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright grey darken-4">
+        <div class="container center-align">&copy; 2018 Animal Army</div>
+    </div>
+</footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 <script>
-    $(function () {
-        $('#callData').click(function () {
-            const url = 'https://spreadsheets.google.com/feeds/list/1QgxRgtc3-84kC4RE4MV8a0sM0D11WNTwnfrwS68jvfI/od6/public/values?alt=json';
-            $.getJSON(url, function (data) {
-                console.log(data.feed.entry)
-                let html = '<div class="container"><div class="row">'
-                let closeTag = '</div></div>'
-                $.each(data.feed.entry, function
-                    (key, val) {
-                    console.log(val.gsx$id.$t)
-                    console.log(val.gsx$name.$t)
-                    console.log(val.gsx$description.$t)
 
-                    html += `
+    function loadPage() {
+
+        $(function () {
+            $('#callData').ready(function () {
+                const url = 'https://spreadsheets.google.com/feeds/list/1QgxRgtc3-84kC4RE4MV8a0sM0D11WNTwnfrwS68jvfI/od6/public/values?alt=json';
+                $.getJSON(url, function (data) {
+                    console.log(data.feed.entry)
+                    let html = '<div class="container"><div class="row">'
+                    let closeTag = '</div></div>'
+                    $.each(data.feed.entry, function
+                        (key, val) {
+
+                        html += `
     <div class="col s12 m4 l4">
       <div class="card">
         <div class="card-image">
-          <img src="">
+          <img src=${val.gsx$imgurl.$t}>
         </div>
 
         <div class="card-content">
             <span class="card-title">${val.gsx$name.$t}</span>
+            <span class="card-title green-text text-accent-5">${val.gsx$price.$t}</span>
             <div class="container center">
                 <botton class="btn yellow darken-3">Add to card</botton>
             </div>
         </div>
       </div>
     </div>
-
                 `
+                    })
+                    $('#output').html(html + closeTag);
                 })
-                $('#output').html(html + closeTag);
             })
-        })
-    });
+
+        });
+    }
 </script>
 
 
@@ -60,6 +130,17 @@
         src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous">
+</script>
+<script>
+    $(document).ready(() => {
+        $('.sidenav').sidenav()
+        $('.materialboxed').materialbox()
+        $('.parallax').parallax()
+        $('.tabs').tabs()
+        $('.datepicker').datepicker()
+        $('.tooltipped').tooltip()
+        $('.scrollspy').scrollSpy()
+    })
 </script>
 </body>
 </html>

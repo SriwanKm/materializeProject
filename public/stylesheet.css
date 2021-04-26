@@ -10,6 +10,14 @@ header {
     min-height: 800px;
 }
 
+.head-pd {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background: url("https://images.pexels.com/photos/825949/pexels-photo-825949.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") top;
+    min-height: 800px;
+}
+
 .brand-logo {
     font-family: 'Original Surfer', cursive;
 }
@@ -24,6 +32,10 @@ img {
 
 .hh1 {
     margin-top: 1rem;
+}
+
+.pd {
+    margin-top: 2.5rem;
 }
 
 .hh1 .p1 {

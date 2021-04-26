@@ -1,4 +1,4 @@
-$.getJSON("https://api.openweathermap.org/data/2.5/weather?q=Oregon&units=imperial&appid=7976a294696117738d3f4102e7df0152",
+$.getJSON("https://api.openweathermap.org/data/2.5/weather?q=Arizona&units=imperial&appid=7976a294696117738d3f4102e7df0152",
 
     function (data) {
         console.log(data)
@@ -13,7 +13,7 @@ $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=Oregon&units=imperi
                 icon = "images/moon.png"
                 break;
             case "02d":
-                icon = "images/sun-cloud.png"
+                icon = "images/sun_cloud.png"
                 break;
             case "03d":
                 icon = "images/cloud.png"
