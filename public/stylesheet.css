@@ -6,17 +6,22 @@ header {
     margin: 0;
     padding: 0;
     background-size: cover;
-    background: url("images/pug.jpg") top;
     min-height: 800px;
 }
 
-.head-pd {
-    margin: 0;
-    padding: 0;
-    background-size: cover;
-    background: url("https://images.pexels.com/photos/825949/pexels-photo-825949.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") top;
-    min-height: 800px;
+.head-home {
+    background: url("images/pug.jpg") top;
+
 }
+
+.head-pd {
+    background: url("https://images.pexels.com/photos/825949/pexels-photo-825949.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") top;
+}
+
+.head-iq {
+    background: url("images/bird_house.jpeg") top;
+}
+
 
 .brand-logo {
     font-family: 'Original Surfer', cursive;
@@ -45,6 +50,12 @@ img {
     font-weight: bold;
     color: #4d5eb3;
     text-shadow: .07em .07em 0 hsl(0, 0%, 100%);
+}
+
+.hh1 .iq {
+    color: #ffdd00;
+    font-size: 3.5em;
+    text-shadow: .07em .07em 0 hsl(240, 60%, 60%);
 }
 
 @keyframes bounce {
@@ -127,7 +138,9 @@ h2 {
     width: 200px;
 }
 
-
+.card {
+    curser: pointer
+}
 
 
 @media screen and (max-width: 670px) {
