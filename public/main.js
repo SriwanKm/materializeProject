@@ -53,7 +53,7 @@ if (document.querySelector('#inquiry') != null) {
 
 document.querySelector('#search')?.addEventListener('click', function () {
     output.innerHTML = ''
-    let search = document.querySelector('input[name="search"]').value;
+    let search = document.querySelector('textarea[name="search"]').value;
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {

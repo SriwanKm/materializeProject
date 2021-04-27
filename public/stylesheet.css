@@ -16,12 +16,13 @@ header {
 
 .head-pd {
     background: url("https://images.pexels.com/photos/825949/pexels-photo-825949.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") top;
+
 }
 
 .head-iq {
-    background: url("images/bird_house.jpeg") top;
+    background-size: cover;
+    background: url("images/bird_house.jpeg") no-repeat fixed top;
 }
-
 
 .brand-logo {
     font-family: 'Original Surfer', cursive;
@@ -139,7 +140,7 @@ h2 {
 }
 
 .card {
-    curser: pointer
+    cursor: pointer
 }
 
 
@@ -152,4 +153,3 @@ h2 {
         font-size: 2em;
     }
 }
-
