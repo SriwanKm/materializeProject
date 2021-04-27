@@ -13,6 +13,11 @@
     <script src="https://kit.fontawesome.com/ee8f4afaa4.js" crossorigin="anonymous" defer></script>
     <script src="weather.js" defer></script>
     <script src="main.js" defer></script>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous">
+    </script>
 </head>
 <body>
 
@@ -26,7 +31,10 @@
             <ul class="hide-on-med-and-down right">
                 <li><a href="#products">Products</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="products.html">Shop</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="inquiry.html">Inquiry</a></li>
+
                 <li><a href="#" class="tooltipped btn-floating btn-small transparent" data-tooltip="Instagram">
                     <i class="fab fa-instagram"></i></a>
                 </li>
@@ -40,7 +48,9 @@
             <ul class="sidenav grey lighten-2" id="mobile-menu">
                 <li><a href="#products">Products</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="products.html">Shop</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="inquiry.html">Inquiry</a></li>
             </ul>
         </div>
     </nav>
@@ -212,11 +222,16 @@
         </div>
 
         <div class="col s12 l5 offset-l2">
-            <form action="">
+            <form id="inquiry" action="">
+                <div class="input-field">
+                    <i class="material-icons prefix">person</i>
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name">
+                </div>
                 <div class="input-field">
                     <i class="material-icons prefix">email</i>
                     <label for="email">Your Email</label>
-                    <input type="email" id="email">
+                    <input type="email" id="email" name="email">
                 </div>
                 <div class="input-field">
                     <i class="material-icons prefix">message</i>
@@ -225,45 +240,46 @@
                 </div>
                 <div class="input-field">
                     <label for="date">Schedule for the service...</label>
-                    <input type="text" id="date" class="datepicker">
+                    <input type="text" id="date" class="datepicker" name="date">
                 </div>
                 <div class="input-field">
                     <p>Type of your animal...</p>
                     <p>
                         <label>
-                            <input type="checkbox"/>
+                            <input type="checkbox" class="cb" name="dog" value="Dog"/>
                             <span>Dog</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox"/>
+                            <input type="checkbox" class="cb" name="cat" value="Cat"/>
                             <span>Cat</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox"/>
+                            <input type="checkbox" class="cb" name="bird" value="Bird"/>
                             <span>Bird</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox"/>
+                            <input type="checkbox" class="cb" name="rabbit" value="Rabbit"/>
                             <span>Rabbit</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox"/>
+                            <input type="checkbox" class="cb" name="chicken" value="Chicken"/>
                             <span>Chicken</span>
                         </label>
                     </p>
                 </div>
                 <div class="input-field center">
-                    <button class="btn">Submit</button>
+                    <input id="submit" type="submit" class="btn">
                 </div>
             </form>
+
         </div>
     </div>
 </section>
@@ -292,11 +308,7 @@
     </div>
 </footer>
 
-<script
-        src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous">
-</script>
+
 <script>
     $(document).ready(() => {
         $('.sidenav').sidenav()
@@ -308,6 +320,7 @@
         $('.scrollspy').scrollSpy()
     })
 </script>
+
 
 </body>
 </html>

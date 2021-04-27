@@ -12,47 +12,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
     <script src="https://kit.fontawesome.com/ee8f4afaa4.js" crossorigin="anonymous" defer></script>
     <script src="weather.js" defer></script>
+    <script src="main.js" defer></script>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous">
+    </script>
 </head>
-<script>
-
-    function loadPage() {
-
-        $(function () {
-            $('#callData').ready(function () {
-                const url = 'https://spreadsheets.google.com/feeds/list/1QgxRgtc3-84kC4RE4MV8a0sM0D11WNTwnfrwS68jvfI/od6/public/values?alt=json';
-                $.getJSON(url, function (data) {
-                    console.log(data.feed.entry)
-                    let html = '<div class="container"><div class="row">'
-                    let closeTag = '</div></div>'
-                    $.each(data.feed.entry, function
-                        (key, val) {
-
-                        html += `
-    <div class="col s12 m4 l4">
-      <div class="card">
-        <div class="card-image">
-          <img src=${val.gsx$imgurl.$t}>
-        </div>
-
-        <div class="card-content">
-            <span class="card-title">${val.gsx$name.$t}</span>
-            <span class="card-title green-text text-accent-5">${val.gsx$price.$t}</span>
-            <div class="container center">
-                <botton class="btn yellow darken-3">Add to card</botton>
-            </div>
-        </div>
-      </div>
-    </div>
-                `
-                    })
-                    $('#output').html(html + closeTag);
-                })
-            })
-
-        });
-    }
-</script>
-
 <body id="callData" onload="loadPage()">
 <header class="head-pd">
     <nav class="nav-wrapper">
@@ -87,23 +53,21 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <div class="row h">
-            <div class="hh1 pd center-align indigo-text text-darken-2">
-                <p class="p1" data-shadow='sign up today get 25% off plus free shipping'>sign up today get 25% off plus
-                    free shipping</p>
-                <a href="#msg"><p class="p2"><span>Clothing</span> | <span>Toys</span> | <span>Accessories</span></p></a>
-            </div>
-            <div class="hh2 col s2 l3 offset-l7 offset-s9 center-align">
-                <img class="cloud icon responsive-img" src="">
-                <p class="temp"></p>
-<!--                <p class="humidity"></p>-->
-                <p id="msg" class="scrollspy"></p>
-            </div>
-        </div>
-    </div>
 </header>
-<div id="output"></div>
+
+<div class="container pink lighten-4">
+    <input type="text" name="search"><br>
+
+    <button class="btn" id="search">Search</button>
+    <br>
+    <p id="op">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium aliquid animi architecto aut autem
+        debitis delectus dignissimos dolorem et expedita facilis fugit hic incidunt ipsa itaque iure iusto laudantium,
+        minus mollitia nesciunt, nihil non officiis omnis optio perspiciatis provident quaerat qui quibusdam quidem rem
+        tempore totam ullam veniam vero!</p>
+    <div id="prev" class="btn">Previous</div>
+    <div id="next" class="btn">Next</div>
+</div>
+
 <footer class="page-footer grey darken-3">
     <div class="container">
         <div class="row">
@@ -131,11 +95,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
-<script
-        src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous">
-</script>
+
 <script>
     $(document).ready(() => {
         $('.sidenav').sidenav()
@@ -149,3 +109,4 @@
 </script>
 </body>
 </html>
+

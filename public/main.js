@@ -1,14 +1,85 @@
+const output = document.getElementById('op');
+const submit = document.querySelector('#submit');
+let currentId = 1;
 
-display.addEventListener('click', function (){
-    sendRequest('https://localhost:3000/posts', 'Get', {})
+
+document.querySelector('#next')?.addEventListener('click', function () {
+
+    currentId++;
+    loadPage();
+})
+document.querySelector('#prev')?.addEventListener('click', function () {
+    if (currentId > 0) {
+        currentId--;
+        loadPage();
+    }
 })
 
-function sendRequest(url, requestType, data){
-    let xhr = new XMLHttpRequest()
-    if (xhr.readyState === 4){
-        console.log(JSON.parse(xhr.response))
+if (document.querySelector('#inquiry') != null) {
+    document.querySelector('#inquiry').addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (output) output.innerHTML = ""
+        let name = document.querySelector('input[name="name"]')
+        let email = document.querySelector('input[name="email"]')
+        const message = document.getElementById('message');
+        let date = document.querySelector('input[name="date"]')
+
+
+        let checkedValue = document.querySelectorAll('input[class=cb]:checked');
+        let animals = Array.prototype.map.call(checkedValue, el => el.value).join(", ")
+
+        let data = 'name=' + name.value + '&email=' + email.value + '&message=' + message.value + '&date=' + date.value + '&animalType=' + animals;
+
+        const xhr = new XMLHttpRequest();
+        if (name.value && email.value && date.value) {
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (output) output.innerHTML = xhr.response;
+                }
+            }
+            console.log(name.value)
+            console.log(email.value)
+            console.log(message.value)
+            console.log(date.value)
+            console.log(animals.value)
+
+            xhr.open('POST', 'http://localhost:3000/posts', true)
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+            xhr.send(data)
+        }
+
+    })
+}
+
+document.querySelector('#search')?.addEventListener('click', function () {
+    output.innerHTML = ''
+    let search = document.querySelector('input[name="search"]').value;
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            let myObj = JSON.parse(xhr.response);
+            console.log(myObj)
+            for (let x = 0; x < myObj.length; x++) {
+                output.innerHTML += '<b>Name:</b> ' + myObj[x].name + '<br><b>Email:</b> ' + myObj[x].email + ' ' + '<br><b>Message:</b> ' + myObj[x].message + '<br><b>Date:</b>' + myObj[x].date + '<br><br>';
+            }
+        }
     }
-    xhr.open(requestType, url, true)
-    xhr.send(data)
+    xhr.open('GET', 'http://localhost:3000/posts?q=' + search, true)
+    xhr.send()
+})
+
+function loadPage() {
+    output.innerHTML = ''
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            let myObj = JSON.parse(xhr.response);
+            for (let key in myObj[0]) {
+                output.innerHTML += '<b>' + key + '</b> : ' + myObj[0][key] + '<br>';
+            }
+        }
+    }
+    xhr.open('GET', 'http://localhost:3000/posts?id=' + currentId, true)
+    xhr.send()
 }
 
