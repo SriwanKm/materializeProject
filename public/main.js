@@ -1,5 +1,4 @@
-const output = document.createElement('table');
-document.getElementById("op").appendChild(output)
+const output = document.getElementById("op")
 const submit = document.querySelector('#submit');
 let currentId = 1;
 
@@ -58,7 +57,15 @@ document.querySelector('#search')?.addEventListener('click', function () {
             let myObj = JSON.parse(xhr.response);
             console.log(myObj)
             for (let x = 0; x < myObj.length; x++) {
-                output.innerHTML += `<tr>
+                output.innerHTML += `
+                        <div class="card blue-grey darken-1">
+                              <div class="card-content white-text">
+                                <table>
+                                     <tr>
+                                        <td><b>ID</b></td>
+                                        <td>${myObj[x].id}</td>
+                                     </tr>
+                                     <tr>
                                         <td><b>Name</b></td>
                                         <td>${myObj[x].name}</td>
                                      </tr>
@@ -73,7 +80,10 @@ document.querySelector('#search')?.addEventListener('click', function () {
                                      <tr>
                                         <td><b>Date</b></td>
                                         <td>${myObj[x].date}</td>
-                                     </tr>`;
+                                     </tr>
+                                </table>
+                              </div>
+                        </div>`;
                 console.log(output);
             }
         }
@@ -90,7 +100,15 @@ function loadPage() {
         if (xhr.readyState === 4) {
             let myObj = JSON.parse(xhr.response);
             for (let x = 0; x < myObj.length; x++) {
-                output.innerHTML += `<tr>
+                output.innerHTML += `
+                        <div class="card blue-grey darken-1">
+                            <div class="card-content white-text">
+                                <table>
+                                     <tr>
+                                        <td><b>ID</b></td>
+                                        <td>${myObj[x].id}</td>
+                                     </tr>
+                                     <tr>
                                         <td>Name</td>
                                         <td>${myObj[x].name}</td>
                                      </tr>
@@ -105,7 +123,10 @@ function loadPage() {
                                      <tr>
                                         <td>Date</td>
                                         <td>${myObj[x].date}</td>
-                                     </tr>`;
+                                     </tr>
+                                </table>
+                            </div>
+                        </div>`;
                 console.log(output);
             }
         }
