@@ -65,7 +65,7 @@ document.querySelector('#search')?.addEventListener('click', function () {
             console.log(myObj)
             for (let x = 0; x < myObj.length; x++) {
                 output.innerHTML += `
-                        <div class="card blue-grey darken-1">
+                        <div class="card blue-grey">
                               <div class="card-content white-text">
                                 <table>
                                      <tr>
@@ -112,7 +112,7 @@ function loadPage() {
             let myObj = JSON.parse(xhr.response);
             for (let x = 0; x < myObj.length; x++) {
                 output.innerHTML += `
-                        <div class="card blue-grey darken-1 center">
+                        <div class="card blue-grey center">
                             <div class="card-content white-text center">
                                 <table>
                                      <tr>
