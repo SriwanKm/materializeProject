@@ -44,7 +44,11 @@ if (document.querySelector('#inquiry') != null) {
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
             xhr.send(data)
         }
-
+        name.value = null
+        email.value = null
+        message.value = null
+        date.value = null
+        $('input[type=checkbox]').prop('checked',false)
     })
 }
 
@@ -74,7 +78,7 @@ document.querySelector('#search')?.addEventListener('click', function () {
                                         <td>${myObj[x].email}</td>
                                      </tr>
                                      <tr>
-                                        <td><b>Inquiry</b></td>
+                                        <td><b>Service required</b></td>
                                         <td>${myObj[x].message}</td>
                                      </tr>
                                      <tr>
@@ -121,7 +125,7 @@ function loadPage() {
                                         <td>${myObj[x].email}</td>
                                      </tr>
                                      <tr>
-                                        <td>Inquiry</td>
+                                        <td>Service required</td>
                                         <td>${myObj[x].message}</td>
                                      </tr>
                                      <tr>
