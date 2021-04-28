@@ -43,12 +43,15 @@ if (document.querySelector('#inquiry') != null) {
             xhr.open('POST', 'http://localhost:3000/posts', true)
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
             xhr.send(data)
+
+
+            name.value = null
+            email.value = null
+            message.value = null
+            date.value = null
+            $('input[type=checkbox]').prop('checked',false)
+            alert("Inquiry submitted")
         }
-        name.value = null
-        email.value = null
-        message.value = null
-        date.value = null
-        $('input[type=checkbox]').prop('checked',false)
     })
 }
 
