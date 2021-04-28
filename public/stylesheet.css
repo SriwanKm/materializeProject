@@ -29,6 +29,14 @@ header {
     border-radius: 50px;
 }
 
+td {
+    width: 300px;
+}
+
+.card {
+    border-radius: 20px;
+}
+
 .brand-logo {
     font-family: 'Original Surfer', cursive;
 }

@@ -74,12 +74,16 @@ document.querySelector('#search')?.addEventListener('click', function () {
                                         <td>${myObj[x].email}</td>
                                      </tr>
                                      <tr>
-                                        <td><b>Message</b></td>
+                                        <td><b>Inquiry</b></td>
                                         <td>${myObj[x].message}</td>
                                      </tr>
                                      <tr>
-                                        <td><b>Date</b></td>
+                                        <td><b>Schedule Date</b></td>
                                         <td>${myObj[x].date}</td>
+                                     </tr>
+                                     <tr>
+                                        <td><b>Animal Type</b></td>
+                                        <td>${myObj[x].animalType}</td>
                                      </tr>
                                 </table>
                               </div>
@@ -101,8 +105,8 @@ function loadPage() {
             let myObj = JSON.parse(xhr.response);
             for (let x = 0; x < myObj.length; x++) {
                 output.innerHTML += `
-                        <div class="card blue-grey darken-1">
-                            <div class="card-content white-text">
+                        <div class="card blue-grey darken-1 center">
+                            <div class="card-content white-text center">
                                 <table>
                                      <tr>
                                         <td><b>ID</b></td>
@@ -117,12 +121,16 @@ function loadPage() {
                                         <td>${myObj[x].email}</td>
                                      </tr>
                                      <tr>
-                                        <td>Message</td>
+                                        <td>Inquiry</td>
                                         <td>${myObj[x].message}</td>
                                      </tr>
                                      <tr>
-                                        <td>Date</td>
+                                        <td>Schedule Date</td>
                                         <td>${myObj[x].date}</td>
+                                     </tr>
+                                     <tr>
+                                        <td><b>Animal Type</b></td>
+                                        <td>${myObj[x].animalType}</td>
                                      </tr>
                                 </table>
                             </div>

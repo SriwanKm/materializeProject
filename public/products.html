@@ -38,7 +38,7 @@
             <span class="card-title">${val.gsx$name.$t}</span>
             <span class="card-title green-text text-accent-5">${val.gsx$price.$t}</span>
             <div class="container center">
-                <botton class="btn yellow darken-3">Add to card</botton>
+                <button data-target="modal1" class="btn modal-trigger">Add to card</button>
             </div>
         </div>
       </div>
@@ -54,6 +54,17 @@
 </script>
 
 <body id="callData" onload="loadPage()">
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h5>Added to cart</h5>
+        <p></p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+</div>
+
+
 <header class="head-pd">
     <nav class="nav-wrapper">
         <div class="container">
@@ -145,6 +156,7 @@
         $('.datepicker').datepicker()
         $('.tooltipped').tooltip()
         $('.scrollspy').scrollSpy()
+        $('.modal').modal();
     })
 </script>
 </body>
