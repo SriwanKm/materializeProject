@@ -1,4 +1,5 @@
-const output = document.getElementById('op');
+const output = document.createElement('table');
+document.getElementById("op").appendChild(output)
 const submit = document.querySelector('#submit');
 let currentId = 1;
 
@@ -9,7 +10,7 @@ document.querySelector('#next')?.addEventListener('click', function () {
     loadPage();
 })
 document.querySelector('#prev')?.addEventListener('click', function () {
-    if (currentId > 0) {
+    if (currentId >= 1) {
         currentId--;
         loadPage();
     }
@@ -18,7 +19,6 @@ document.querySelector('#prev')?.addEventListener('click', function () {
 if (document.querySelector('#inquiry') != null) {
     document.querySelector('#inquiry').addEventListener('submit', function (e) {
         e.preventDefault();
-        if (output) output.innerHTML = ""
         let name = document.querySelector('input[name="name"]')
         let email = document.querySelector('input[name="email"]')
         const message = document.getElementById('message');
@@ -34,14 +34,12 @@ if (document.querySelector('#inquiry') != null) {
         if (name.value && email.value && date.value) {
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
-                    if (output) output.innerHTML = xhr.response;
                 }
             }
             console.log(name.value)
             console.log(email.value)
             console.log(message.value)
             console.log(date.value)
-            console.log(animals.value)
 
             xhr.open('POST', 'http://localhost:3000/posts', true)
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
@@ -60,7 +58,23 @@ document.querySelector('#search')?.addEventListener('click', function () {
             let myObj = JSON.parse(xhr.response);
             console.log(myObj)
             for (let x = 0; x < myObj.length; x++) {
-                output.innerHTML += '<b>Name:</b> ' + myObj[x].name + '<br><b>Email:</b> ' + myObj[x].email + ' ' + '<br><b>Message:</b> ' + myObj[x].message + '<br><b>Date:</b>' + myObj[x].date + '<br><br>';
+                output.innerHTML += `<tr>
+                                        <td><b>Name</b></td>
+                                        <td>${myObj[x].name}</td>
+                                     </tr>
+                                     <tr>
+                                        <td><b>Email</b></td>
+                                        <td>${myObj[x].email}</td>
+                                     </tr>
+                                     <tr>
+                                        <td><b>Message</b></td>
+                                        <td>${myObj[x].message}</td>
+                                     </tr>
+                                     <tr>
+                                        <td><b>Date</b></td>
+                                        <td>${myObj[x].date}</td>
+                                     </tr>`;
+                console.log(output);
             }
         }
     }
@@ -69,13 +83,30 @@ document.querySelector('#search')?.addEventListener('click', function () {
 })
 
 function loadPage() {
-    output.innerHTML = ''
+
     const xhr = new XMLHttpRequest();
+    output.innerHTML = ''
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             let myObj = JSON.parse(xhr.response);
-            for (let key in myObj[0]) {
-                output.innerHTML += '<b>' + key + '</b> : ' + myObj[0][key] + '<br>';
+            for (let x = 0; x < myObj.length; x++) {
+                output.innerHTML += `<tr>
+                                        <td>Name</td>
+                                        <td>${myObj[x].name}</td>
+                                     </tr>
+                                     <tr>
+                                        <td>Email</td>
+                                        <td>${myObj[x].email}</td>
+                                     </tr>
+                                     <tr>
+                                        <td>Message</td>
+                                        <td>${myObj[x].message}</td>
+                                     </tr>
+                                     <tr>
+                                        <td>Date</td>
+                                        <td>${myObj[x].date}</td>
+                                     </tr>`;
+                console.log(output);
             }
         }
     }
